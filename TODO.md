@@ -1,3 +1,5 @@
+# TO DO
+
 **Améliorer la Base donnée :**
 
   - Découper toutes les images avec les sillures dans un format carré. Ne pas hésiter à couper plusieurs fois pour avoir des sillures seules et en groupe.
