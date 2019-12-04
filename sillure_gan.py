@@ -20,7 +20,7 @@ NOISE_SIZE = 100
 EPOCHS = 10000  # number of iterations
 BATCH_SIZE = 32
 GENERATE_RES = 3
-IMAGE_SIZE = 256  # rows/cols
+IMAGE_SIZE = 128  # rows/cols
 IMAGE_CHANNELS = 3
 
 training_data = np.load('sillureV3_data.npy')
