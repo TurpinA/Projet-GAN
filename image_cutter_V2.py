@@ -9,7 +9,7 @@ PATH_Images = 'DATA/Images/'
 PATH_POSITION = 'DATA/Position/'
 Path_SAVE = 'DATA/Images_Coupees_V2/'
 
-#Découpage des images originales
+# Découpage des images originales
 
 imageFilename = []
 positionFilename = []
@@ -28,7 +28,7 @@ for i in range(len(imageFilename)):
 
     position = open(positionFilename[i], "r")
     line = position.readline()
-    NbLine = 1
+    NbLine = 0
 
     while line and line != "\n":
         positionString = line.split("\t")
@@ -39,18 +39,18 @@ for i in range(len(imageFilename)):
         bottom = top + 256
 
         # On tourne les images
-        for j in range(0,1):
-            test = (right-left)/2 + left,(bottom-top)/2 + top
+        for j in range(0, 36):
+            test = (right - left) / 2 + left, (bottom - top) / 2 + top
             image_rotated = image.rotate(j * 10, center=test)
             newImage = image_rotated.crop((left, top, right, bottom))
             name = (imageFilename[i].split("/")[2]).split(".")[0]
-            newImagePath = os.path.join(Path_SAVE, f"{name}({NbLine})_cutted_R{j*10}.jpg")
+            newImagePath = os.path.join(Path_SAVE, f"{name}({NbLine})_cutted_R{j * 10}.jpg")
             print(newImagePath)
             newImage.save(newImagePath)
-        ++NbLine
+        NbLine = NbLine + 1
         line = position.readline()
 
-    position.close()
+position.close()
 
 print("Cutting finished")
 print("")
